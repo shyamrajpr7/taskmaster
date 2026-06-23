@@ -5,7 +5,7 @@ import 'dart:math';
 import 'services/notification_service.dart';
 import 'services/gamification_service.dart';
 import 'screens/focus_page.dart';
-import 'screens/achievements_page.dart';
+import 'screens/hub_page.dart';
 
 class Task {
   final String id;
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: const [
           DashboardPage(),
           FocusPage(),
-          AchievementsPage(),
+          HubPage(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -130,9 +130,9 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Focus',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.emoji_events_outlined),
-              activeIcon: Icon(Icons.emoji_events_rounded),
-              label: 'Achievements',
+              icon: Icon(Icons.widgets_outlined),
+              activeIcon: Icon(Icons.widgets_rounded),
+              label: 'Hub',
             ),
           ],
         ),
