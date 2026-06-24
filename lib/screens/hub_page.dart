@@ -8,6 +8,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import '../services/gamification_service.dart';
+import 'flappy_bird_page.dart';
 
 const Color _cardBg = Color(0xFF1E293B);
 const Color _violet = Color(0xFF8B5CF6);
@@ -499,6 +500,8 @@ class _HubPageState extends State<HubPage> {
               const SizedBox(height: 20),
               _buildAchievementsCard(),
               const SizedBox(height: 24),
+              _buildMiniGamesCard(),
+              const SizedBox(height: 24),
               _buildVaultHeader(),
               const SizedBox(height: 12),
               _buildDocumentList(),
@@ -713,6 +716,47 @@ class _HubPageState extends State<HubPage> {
             }).toList(),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildMiniGamesCard() {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (ctx) => const FlappyBirdPage()));
+      },
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: _violet.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: _violet.withValues(alpha: 0.3)),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: _violet.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: const Icon(Icons.videogame_asset_rounded, color: _violet, size: 28),
+            ),
+            const SizedBox(width: 16),
+            const Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Mini-Games', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: _whiteText)),
+                  SizedBox(height: 4),
+                  Text('Play Flappy Bird to earn XP!', style: TextStyle(fontSize: 12, color: _slateText)),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_right_rounded, color: _slateText),
+          ],
+        ),
       ),
     );
   }
