@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import '../services/gamification_service.dart';
 
 const Color _bgCanvas = Color(0xFF0F172A);
