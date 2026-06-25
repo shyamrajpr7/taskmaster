@@ -10,6 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import '../services/gamification_service.dart';
 import 'flappy_bird_page.dart';
 import 'snake_game_page.dart';
+import 'racing_game_page.dart';
 
 const Color _cardBg = Color(0xFF1E293B);
 const Color _violet = Color(0xFF8B5CF6);
@@ -760,6 +761,14 @@ class _HubPageState extends State<HubPage> {
                 icon: Icons.gesture_rounded,
                 color: _cyan,
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (ctx) => const SnakeGamePage())),
+              ),
+              const SizedBox(width: 12),
+              _buildGameCard(
+                title: 'Neon Racing',
+                subtitle: 'Endless synthwave driver',
+                icon: Icons.electric_car_rounded,
+                color: _rose,
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (ctx) => const RacingGamePage())),
               ),
             ],
           ),
